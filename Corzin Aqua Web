@@ -1,0 +1,2310 @@
+<!-- Corzin Aqua Homepage | Elementor HTML Widget (no <html><head><body>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer">
+
+<div id="czx-corzin-home" class="czx-root" aria-label="Corzin Aqua Homepage">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    /* ==============================
+       Corzin Aqua - Scoped System
+       Everything is scoped to #czx-corzin-home to avoid Elementor/theme conflicts.
+       ============================== */
+
+    #czx-corzin-home{
+      /* Brand */
+      --czx-navy: #0a192f;
+      --czx-navy-2: #172a46;
+      --czx-aqua: #00b4d8;
+      --czx-aqua-2: #e0f7fa;
+      --czx-lime: #a3e635;
+      --czx-lime-2: #65a30d;
+
+      /* Neutrals */
+      --czx-white: #ffffff;
+      --czx-gray-50: #f8fafc;
+      --czx-gray-100: #f1f5f9;
+      --czx-gray-200: #e2e8f0;
+      --czx-gray-300: #cbd5e1;
+      --czx-gray-500: #64748b;
+      --czx-gray-700: #334155;
+      --czx-gray-900: #0f172a;
+
+      /* Layout */
+      --czx-max: 1200px;
+      --czx-header-h: 76px;
+
+      /* Radius + Shadow */
+      --czx-r-sm: 10px;
+      --czx-r-md: 16px;
+      --czx-r-lg: 24px;
+      --czx-r-pill: 9999px;
+
+      --czx-sh-sm: 0 1px 2px rgba(0,0,0,.06);
+      --czx-sh-md: 0 10px 25px rgba(2, 6, 23, .08);
+      --czx-sh-lg: 0 18px 45px rgba(2, 6, 23, .12);
+      --czx-glow: 0 0 24px rgba(0, 180, 216, .24);
+
+      /* Typography */
+      --czx-font: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+      /* Motion */
+      --czx-ease: cubic-bezier(.2, .8, .2, 1);
+
+      font-family: var(--czx-font);
+      color: var(--czx-gray-900);
+      background: var(--czx-white);
+      line-height: 1.6;
+      position: relative;
+      width: 100%;
+      overflow-x: clip;
+    }
+
+    /* Reset (scoped) */
+    #czx-corzin-home *,
+    #czx-corzin-home *::before,
+    #czx-corzin-home *::after { box-sizing: border-box; }
+
+    #czx-corzin-home h1,
+    #czx-corzin-home h2,
+    #czx-corzin-home h3,
+    #czx-corzin-home h4,
+    #czx-corzin-home h5,
+    #czx-corzin-home p { margin: 0; }
+
+    #czx-corzin-home ul { list-style: none; padding: 0; margin: 0; }
+
+    #czx-corzin-home a { color: inherit; text-decoration: none; }
+    #czx-corzin-home img { max-width: 100%; display: block; height: auto; }
+
+    #czx-corzin-home input,
+    #czx-corzin-home select,
+    #czx-corzin-home textarea,
+    #czx-corzin-home button { font: inherit; }
+
+    #czx-corzin-home button { border: 0; background: none; cursor: pointer; }
+
+    /* Containers + sections */
+    #czx-corzin-home .czx-container{
+      width: 100%;
+      max-width: var(--czx-max);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    #czx-corzin-home .czx-section{
+      padding: clamp(56px, 6vw, 92px) 0;
+      position: relative;
+    }
+
+    #czx-corzin-home .czx-section--soft { background: var(--czx-gray-50); }
+    #czx-corzin-home .czx-section--aqua { background: var(--czx-aqua-2); }
+    #czx-corzin-home .czx-dot{
+      background-image: radial-gradient(var(--czx-gray-200) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    #czx-corzin-home section{ scroll-margin-top: 92px; }
+
+    /* Headings */
+    #czx-corzin-home .czx-title{
+      font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--czx-navy);
+    }
+
+    #czx-corzin-home .czx-kicker{
+      margin-top: 10px;
+      font-size: clamp(.98rem, 1.5vw, 1.12rem);
+      color: var(--czx-gray-700);
+      max-width: 70ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #czx-corzin-home .czx-text-aqua{ color: var(--czx-aqua); }
+    #czx-corzin-home .czx-text-lime{ color: var(--czx-lime-2); }
+    #czx-corzin-home .czx-muted{ color: var(--czx-gray-500); }
+
+    /* Buttons */
+    #czx-corzin-home .czx-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: var(--czx-r-pill);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform .2s var(--czx-ease), box-shadow .2s var(--czx-ease), background-color .2s var(--czx-ease), color .2s var(--czx-ease), border-color .2s var(--czx-ease);
+      border: 2px solid transparent;
+      white-space: nowrap;
+      will-change: transform;
+      user-select: none;
+    }
+
+    #czx-corzin-home .czx-btn:active { transform: translateY(1px); }
+
+    #czx-corzin-home .czx-btn--primary{
+      background: var(--czx-aqua);
+      color: var(--czx-white);
+      box-shadow: var(--czx-sh-md);
+    }
+    #czx-corzin-home .czx-btn--primary:hover{
+      background: #0090ad;
+      transform: translateY(-2px);
+      box-shadow: var(--czx-sh-lg);
+    }
+
+    #czx-corzin-home .czx-btn--outline{
+      border-color: var(--czx-aqua);
+      color: var(--czx-aqua);
+      background: transparent;
+    }
+    #czx-corzin-home .czx-btn--outline:hover{
+      background: var(--czx-aqua);
+      color: var(--czx-white);
+      transform: translateY(-2px);
+      box-shadow: var(--czx-sh-md);
+    }
+
+    #czx-corzin-home .czx-btn--lime{
+      background: var(--czx-lime);
+      border-color: var(--czx-lime);
+      color: var(--czx-navy);
+      box-shadow: var(--czx-sh-md);
+    }
+    #czx-corzin-home .czx-btn--lime:hover{
+      background: var(--czx-lime-2);
+      border-color: var(--czx-lime-2);
+      color: var(--czx-white);
+      transform: translateY(-2px);
+      box-shadow: var(--czx-sh-lg);
+    }
+
+    #czx-corzin-home .czx-btn--whatsapp{
+      background: #25D366;
+      color: #fff;
+      border-color: #25D366;
+      box-shadow: var(--czx-sh-md);
+    }
+    #czx-corzin-home .czx-btn--whatsapp:hover{
+      background: #128C7E;
+      border-color: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: var(--czx-sh-lg);
+    }
+
+    /* Media system */
+    #czx-corzin-home .czx-media{
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--czx-r-md);
+      background: var(--czx-gray-100);
+      isolation: isolate;
+    }
+    #czx-corzin-home .czx-media img{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.001);
+      transition: transform .45s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-media:hover img{ transform: scale(1.05); }
+
+    #czx-corzin-home .czx-ar-hero{ aspect-ratio: 16 / 9; }
+    #czx-corzin-home .czx-ar-square{ aspect-ratio: 1 / 1; }
+    #czx-corzin-home .czx-ar-wide{ aspect-ratio: 16 / 10; }
+    #czx-corzin-home .czx-ar-benefit{ aspect-ratio: 4 / 3; }
+    #czx-corzin-home .czx-ar-install{ aspect-ratio: 3 / 2; }
+
+    /* Reveal */
+    #czx-corzin-home .czx-reveal{
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s var(--czx-ease), transform .7s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce){
+      #czx-corzin-home .czx-reveal{ opacity: 1; transform: none; transition: none; }
+      #czx-corzin-home .czx-media img{ transition: none; }
+      #czx-corzin-home .czx-btn{ transition: none; }
+    }
+
+    /* ==============================
+       Header + Navigation
+       ============================== */
+    #czx-corzin-home .czx-header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999999;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--czx-gray-200);
+      box-shadow: var(--czx-sh-sm);
+    }
+    #czx-corzin-home .czx-header__inner{
+      height: var(--czx-header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    #czx-corzin-home .czx-logo{
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--czx-navy);
+      letter-spacing: -0.02em;
+    }
+    #czx-corzin-home .czx-logo span{ color: var(--czx-aqua); }
+
+    #czx-corzin-home .czx-nav{
+      display: none;
+      align-items: center;
+      gap: 18px;
+    }
+    #czx-corzin-home .czx-nav a{
+      font-weight: 600;
+      color: var(--czx-navy);
+      position: relative;
+      padding: 8px 6px;
+    }
+    #czx-corzin-home .czx-nav a::after{
+      content: "";
+      position: absolute;
+      left: 6px;
+      right: 6px;
+      bottom: 4px;
+      height: 2px;
+      background: var(--czx-lime);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .22s var(--czx-ease);
+      border-radius: 999px;
+    }
+    #czx-corzin-home .czx-nav a:hover::after{ transform: scaleX(1); }
+
+    #czx-corzin-home .czx-mobile-toggle{
+      display: inline-flex;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--czx-gray-200);
+      background: rgba(255,255,255,.8);
+      box-shadow: var(--czx-sh-sm);
+    }
+    #czx-corzin-home .czx-burger{
+      width: 18px;
+      height: 12px;
+      position: relative;
+    }
+    #czx-corzin-home .czx-burger span{
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--czx-navy);
+      border-radius: 2px;
+      transition: transform .25s var(--czx-ease), top .25s var(--czx-ease), opacity .2s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-burger span:nth-child(1){ top: 0; }
+    #czx-corzin-home .czx-burger span:nth-child(2){ top: 5px; }
+    #czx-corzin-home .czx-burger span:nth-child(3){ top: 10px; }
+
+    #czx-corzin-home .czx-mobile-toggle[aria-expanded="true"] .czx-burger span:nth-child(1){ top: 5px; transform: rotate(45deg); }
+    #czx-corzin-home .czx-mobile-toggle[aria-expanded="true"] .czx-burger span:nth-child(2){ opacity: 0; }
+    #czx-corzin-home .czx-mobile-toggle[aria-expanded="true"] .czx-burger span:nth-child(3){ top: 5px; transform: rotate(-45deg); }
+
+    #czx-corzin-home .czx-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,.45);
+      z-index: 999998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-overlay.is-open{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #czx-corzin-home .czx-mobile-drawer{
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      top: calc(var(--czx-header-h) + 10px);
+      z-index: 999999;
+      background: var(--czx-white);
+      border: 1px solid var(--czx-gray-200);
+      border-radius: var(--czx-r-lg);
+      box-shadow: var(--czx-sh-lg);
+      padding: 14px;
+      transform: translateY(-14px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .22s var(--czx-ease), opacity .22s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-mobile-drawer.is-open{
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #czx-corzin-home .czx-mobile-links{
+      display: grid;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    #czx-corzin-home .czx-mobile-links a{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--czx-gray-200);
+      font-weight: 700;
+      color: var(--czx-navy);
+      background: var(--czx-gray-50);
+    }
+    #czx-corzin-home .czx-mobile-links a i{
+      color: var(--czx-aqua);
+    }
+    #czx-corzin-home .czx-mobile-actions{
+      display: grid;
+      gap: 10px;
+    }
+    
+    
+   /* ==============================
+       Language Bar (Below Nav)
+       ============================== */
+    #czx-corzin-home .czx-lang-bar {
+      /* Positioned below the fixed header */
+      margin-top: var(--czx-header-h); 
+      background: var(--czx-gray-50);
+      border-bottom: 1px solid var(--czx-gray-200);
+      padding: 12px 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      z-index: 900;
+    }
+
+    #czx-corzin-home .czx-lang-pill {
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 1px solid var(--czx-gray-300);
+      background: #fff;
+      color: var(--czx-gray-700);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 80px; /* Ensure buttons are wide enough to tap */
+    }
+
+    #czx-corzin-home .czx-lang-pill:hover {
+      border-color: var(--czx-aqua);
+      color: var(--czx-navy);
+    }
+
+    #czx-corzin-home .czx-lang-pill.is-active {
+      background: var(--czx-aqua);
+      color: #fff;
+      border-color: var(--czx-aqua);
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+    }
+
+    /* Adjust Hero section so it doesn't hide behind the new bar */
+    #czx-corzin-home .czx-hero {
+      padding-top: 40px !important; /* Overwrite previous padding */
+    }
+
+    @media (min-width: 1024px){
+      #czx-corzin-home .czx-nav{ display: flex; }
+      #czx-corzin-home .czx-mobile-toggle{ display: none; }
+      #czx-corzin-home .czx-mobile-drawer{ display: none; }
+      #czx-corzin-home .czx-overlay{ display: none; }
+    }
+
+    /* ==============================
+       Hero
+       ============================== */
+       
+       /*added new section*/
+       
+       
+       
+       /*section end*/
+    #czx-corzin-home .czx-hero{
+      padding-top: calc(var(--czx-header-h) + 34px);
+      padding-bottom: clamp(42px, 5vw, 70px);
+      background:
+        radial-gradient(at 0% 0%, rgba(0,180,216,.18) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(163,230,53,.18) 0px, transparent 52%),
+        radial-gradient(at 0% 100%, rgba(0,180,216,.14) 0px, transparent 55%),
+        linear-gradient(180deg, #f0f9ff 0%, #ffffff 65%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #czx-corzin-home .czx-hero__grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    #czx-corzin-home .czx-badges{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    #czx-corzin-home .czx-badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: var(--czx-r-pill);
+      border: 1px solid var(--czx-gray-200);
+      background: rgba(255,255,255,.75);
+      box-shadow: var(--czx-sh-sm);
+      font-weight: 700;
+      font-size: .86rem;
+      color: var(--czx-navy);
+    }
+    #czx-corzin-home .czx-badge i{ color: var(--czx-lime-2); }
+
+    #czx-corzin-home .czx-hero__h1{
+      font-size: clamp(2.05rem, 4.2vw, 3.05rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--czx-navy);
+      margin-bottom: 12px;
+    }
+    #czx-corzin-home .czx-hero__sub{
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--czx-gray-700);
+      margin-bottom: 18px;
+      max-width: 62ch;
+    }
+
+    #czx-corzin-home .czx-hero__actions{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    #czx-corzin-home .czx-hero__card{
+      background: var(--czx-white);
+      border: 1px solid var(--czx-gray-200);
+      border-radius: var(--czx-r-lg);
+      box-shadow: var(--czx-sh-lg);
+      padding: 18px;
+      border-top: 5px solid var(--czx-lime);
+    }
+
+    #czx-corzin-home .czx-card-title{
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--czx-navy);
+      margin-bottom: 12px;
+    }
+
+    #czx-corzin-home .czx-form{
+      display: grid;
+      gap: 10px;
+    }
+    #czx-corzin-home .czx-field{
+      display: grid;
+      gap: 6px;
+    }
+    #czx-corzin-home .czx-input,
+    #czx-corzin-home .czx-select{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--czx-gray-200);
+      background: #fff;
+      color: var(--czx-gray-900);
+      transition: box-shadow .2s var(--czx-ease), border-color .2s var(--czx-ease);
+      outline: none;
+    }
+    #czx-corzin-home .czx-input:focus,
+    #czx-corzin-home .czx-select:focus{
+      border-color: var(--czx-aqua);
+      box-shadow: 0 0 0 4px rgba(0, 180, 216, .14);
+    }
+    #czx-corzin-home .czx-privacy{
+      font-size: .8rem;
+      color: var(--czx-gray-500);
+      text-align: center;
+    }
+    #czx-corzin-home .czx-form-note{
+      display: none;
+      margin-top: 8px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--czx-lime-2);
+      text-align: center;
+    }
+    #czx-corzin-home .czx-form-note.is-show{ display: block; }
+
+    @media (min-width: 1024px){
+      #czx-corzin-home .czx-hero__grid{
+        grid-template-columns: 1.15fr .85fr;
+        gap: 34px;
+      }
+      #czx-corzin-home .czx-hero__card{ padding: 22px; }
+    }
+
+    /* ==============================
+       Cards / Grids (Problems, Benefits, Install)
+       ============================== */
+    #czx-corzin-home .czx-grid-3{
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 720px){
+      #czx-corzin-home .czx-grid-3{ grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    }
+    @media (min-width: 1024px){
+      #czx-corzin-home .czx-grid-3{ grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    }
+
+    #czx-corzin-home .czx-card{
+      background: #fff;
+      border: 1px solid var(--czx-gray-200);
+      border-radius: var(--czx-r-md);
+      box-shadow: var(--czx-sh-sm);
+      overflow: hidden;
+      transition: transform .25s var(--czx-ease), box-shadow .25s var(--czx-ease), border-color .25s var(--czx-ease);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    #czx-corzin-home .czx-card:hover{
+      transform: translateY(-4px);
+      box-shadow: var(--czx-sh-md);
+      border-color: rgba(0,180,216,.45);
+    }
+    #czx-corzin-home .czx-card__body{
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    #czx-corzin-home .czx-card__title{
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--czx-navy);
+      line-height: 1.25;
+    }
+    #czx-corzin-home .czx-card__text{
+      font-size: .95rem;
+      color: var(--czx-gray-700);
+    }
+
+    #czx-corzin-home .czx-icon{
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--czx-aqua-2);
+      color: var(--czx-aqua);
+      font-size: 1.35rem;
+      border: 1px solid rgba(0, 180, 216, .2);
+    }
+
+    /* Problems card image attaches to bottom */
+    #czx-corzin-home .czx-card__media{
+      margin-top: auto;
+      border-top: 1px solid var(--czx-gray-100);
+      border-radius: 0 0 var(--czx-r-md) var(--czx-r-md);
+    }
+
+    /* ==============================
+       Technology Stepper
+       ============================== */
+    #czx-corzin-home .czx-stepper{
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+      align-items: center;
+      margin-top: 22px;
+    }
+    @media (min-width: 1024px){
+      #czx-corzin-home .czx-stepper{ grid-template-columns: .95fr 1.05fr; gap: 26px; }
+    }
+
+    #czx-corzin-home .czx-steps{
+      display: grid;
+      gap: 12px;
+    }
+    #czx-corzin-home .czx-step{
+      width: 100%;
+      text-align: left;
+      border: 1px solid var(--czx-gray-200);
+      background: #fff;
+      border-radius: var(--czx-r-md);
+      padding: 14px;
+      box-shadow: var(--czx-sh-sm);
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 12px;
+      align-items: start;
+      transition: transform .25s var(--czx-ease), box-shadow .25s var(--czx-ease), border-color .25s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-step:hover{
+      transform: translateY(-2px);
+      border-color: rgba(0,180,216,.55);
+      box-shadow: var(--czx-sh-md);
+    }
+    #czx-corzin-home .czx-step.is-active{
+      border-color: rgba(0,180,216,.8);
+      box-shadow: var(--czx-sh-lg);
+    }
+    #czx-corzin-home .czx-step__num{
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: var(--czx-gray-700);
+      background: var(--czx-gray-100);
+      border: 1px solid var(--czx-gray-200);
+    }
+    #czx-corzin-home .czx-step.is-active .czx-step__num{
+      background: var(--czx-aqua);
+      color: #fff;
+      border-color: var(--czx-aqua);
+      box-shadow: var(--czx-glow);
+    }
+    #czx-corzin-home .czx-step__h{
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--czx-navy);
+      margin-bottom: 6px;
+    }
+    #czx-corzin-home .czx-step__p{
+      font-size: .92rem;
+      color: var(--czx-gray-700);
+      margin-bottom: 10px;
+    }
+    #czx-corzin-home .czx-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: .78rem;
+      color: var(--czx-lime-2);
+      background: var(--czx-gray-50);
+      border: 1px solid var(--czx-gray-200);
+      padding: 6px 10px;
+      border-radius: var(--czx-r-pill);
+      width: fit-content;
+    }
+
+    #czx-corzin-home .czx-diagram{
+      border-radius: var(--czx-r-lg);
+      overflow: hidden;
+      box-shadow: var(--czx-sh-lg);
+      border: 1px solid var(--czx-gray-200);
+    }
+
+    #czx-corzin-home .czx-diagram img{
+      transition: opacity .2s var(--czx-ease);
+    }
+
+    /* ==============================
+       Comparison Table
+       ============================== */
+    #czx-corzin-home .czx-table-wrap{
+      margin-top: 18px;
+      border: 1px solid var(--czx-gray-200);
+      border-radius: var(--czx-r-md);
+      overflow-x: auto;
+      background: #fff;
+      box-shadow: var(--czx-sh-sm);
+    }
+    #czx-corzin-home table.czx-table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      font-size: .95rem;
+    }
+    #czx-corzin-home .czx-table th,
+    #czx-corzin-home .czx-table td{
+      padding: 14px;
+      border-bottom: 1px solid var(--czx-gray-200);
+      text-align: left;
+      vertical-align: top;
+    }
+    #czx-corzin-home .czx-table th{
+      background: var(--czx-navy);
+      color: #fff;
+      font-weight: 900;
+    }
+    #czx-corzin-home .czx-col-corzin{
+      background: rgba(0, 180, 216, .06);
+      font-weight: 800;
+      color: var(--czx-navy);
+    }
+    #czx-corzin-home .czx-ok{ color: var(--czx-lime-2); }
+    #czx-corzin-home .czx-no{ color: #ef4444; }
+    #czx-corzin-home .czx-warn{ color: #f59e0b; }
+
+    /* ==============================
+       Reviews + Slider
+       ============================== */
+    #czx-corzin-home .czx-stats{
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 22px;
+    }
+    @media (min-width: 900px){
+      #czx-corzin-home .czx-stats{ grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    }
+    #czx-corzin-home .czx-stat{
+      border-radius: var(--czx-r-md);
+      background: var(--czx-navy);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 16px;
+      box-shadow: var(--czx-sh-md);
+      text-align: center;
+    }
+    #czx-corzin-home .czx-stat i{ color: var(--czx-lime); font-size: 1.8rem; margin-bottom: 8px; }
+    #czx-corzin-home .czx-stat b{ display: block; font-size: 1.08rem; }
+    #czx-corzin-home .czx-stat span{ display: block; opacity: .88; font-size: .9rem; }
+
+    #czx-corzin-home .czx-slider{
+      margin-top: 22px;
+      position: relative;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #czx-corzin-home .czx-slider__frame{
+      overflow: hidden;
+      border-radius: var(--czx-r-lg);
+      border: 1px solid var(--czx-gray-200);
+      background: #fff;
+      box-shadow: var(--czx-sh-lg);
+    }
+    #czx-corzin-home .czx-slider__track{
+      display: flex;
+      transition: transform .5s var(--czx-ease);
+      will-change: transform;
+    }
+    #czx-corzin-home .czx-slide{
+      min-width: 100%;
+      padding: clamp(18px, 3.3vw, 30px);
+      text-align: center;
+      display: grid;
+      gap: 12px;
+      justify-items: center;
+    }
+    #czx-corzin-home .czx-avatar{
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--czx-gray-200), var(--czx-gray-100));
+      border: 1px solid var(--czx-gray-200);
+      color: var(--czx-gray-700);
+      font-size: 1.5rem;
+    }
+    #czx-corzin-home .czx-quote{
+      font-size: clamp(1rem, 1.7vw, 1.18rem);
+      color: var(--czx-gray-900);
+      font-style: italic;
+      line-height: 1.75;
+      max-width: 70ch;
+    }
+    #czx-corzin-home .czx-who b{
+      color: var(--czx-navy);
+      display: block;
+      font-weight: 900;
+    }
+    #czx-corzin-home .czx-who span{ color: var(--czx-gray-500); font-weight: 600; font-size: .95rem; }
+    #czx-corzin-home .czx-stars{ color: #fbbf24; letter-spacing: 2px; }
+
+    #czx-corzin-home .czx-arrow{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.96);
+      border: 1px solid var(--czx-gray-200);
+      box-shadow: var(--czx-sh-md);
+      display: grid;
+      place-items: center;
+      color: var(--czx-navy);
+      font-size: 1.2rem;
+      transition: transform .2s var(--czx-ease), background-color .2s var(--czx-ease), color .2s var(--czx-ease), border-color .2s var(--czx-ease);
+      z-index: 2;
+    }
+    #czx-corzin-home .czx-arrow:hover{
+      background: var(--czx-aqua);
+      border-color: var(--czx-aqua);
+      color: #fff;
+      transform: translateY(-50%) scale(1.07);
+    }
+    #czx-corzin-home .czx-arrow--prev{ left: -10px; }
+    #czx-corzin-home .czx-arrow--next{ right: -10px; }
+
+    @media (max-width: 820px){
+      #czx-corzin-home .czx-arrow{ display: none; }
+    }
+
+    /* ==============================
+       FAQ
+       ============================== */
+    #czx-corzin-home .czx-faq-wrap{
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    @media (min-width: 1024px){
+      #czx-corzin-home .czx-faq-wrap{ grid-template-columns: 2fr 1fr; gap: 22px; }
+    }
+
+    #czx-corzin-home details.czx-faq{
+      border: 1px solid var(--czx-gray-200);
+      border-radius: var(--czx-r-md);
+      background: #fff;
+      box-shadow: var(--czx-sh-sm);
+      overflow: hidden;
+      transition: box-shadow .25s var(--czx-ease), border-color .25s var(--czx-ease);
+    }
+    #czx-corzin-home details.czx-faq:hover{
+      border-color: rgba(0,180,216,.55);
+      box-shadow: var(--czx-sh-md);
+    }
+    #czx-corzin-home details.czx-faq[open]{
+      background: var(--czx-gray-50);
+      border-color: rgba(0,180,216,.75);
+    }
+    #czx-corzin-home summary.czx-faq__q{
+      list-style: none;
+      cursor: pointer;
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 900;
+      color: var(--czx-navy);
+    }
+    #czx-corzin-home summary.czx-faq__q::-webkit-details-marker{ display:none; }
+
+    #czx-corzin-home .czx-topic{
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--czx-gray-200);
+      background: var(--czx-gray-100);
+      color: var(--czx-gray-700);
+      white-space: nowrap;
+    }
+    #czx-corzin-home .czx-topic--tech{ background: #e0f2fe; color: #0369a1; border-color: #bae6fd; }
+    #czx-corzin-home .czx-topic--source{ background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+    #czx-corzin-home .czx-topic--maint{ background: #fef9c3; color: #854d0e; border-color: #fde68a; }
+    #czx-corzin-home .czx-topic--service{ background: #f3e8ff; color: #6b21a8; border-color: #e9d5ff; }
+
+    #czx-corzin-home .czx-chevron{
+      color: var(--czx-aqua);
+      transition: transform .2s var(--czx-ease);
+      flex: 0 0 auto;
+    }
+    #czx-corzin-home details[open] .czx-chevron{ transform: rotate(180deg); }
+
+    #czx-corzin-home .czx-faq__a{
+      padding: 0 14px 14px 14px;
+      color: var(--czx-gray-700);
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    #czx-corzin-home .czx-faq-cta{
+      background: var(--czx-navy);
+      color: #fff;
+      border-radius: var(--czx-r-lg);
+      padding: 18px;
+      box-shadow: var(--czx-sh-lg);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    @media (min-width: 1024px){
+      #czx-corzin-home .czx-faq-cta{ position: sticky; top: calc(var(--czx-header-h) + 18px); }
+    }
+    #czx-corzin-home .czx-faq-cta h4{
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+    #czx-corzin-home .czx-faq-cta p{
+      margin-bottom: 14px;
+      color: rgba(255,255,255,.8);
+      font-size: .95rem;
+    }
+    #czx-corzin-home .czx-faq-cta .czx-btn{ width: 100%; justify-content: center; }
+
+    /* ==============================
+       CTA Strip + Footer
+       ============================== */
+    #czx-corzin-home .czx-cta{
+      background: var(--czx-navy);
+      color: #fff;
+      overflow: hidden;
+    }
+    #czx-corzin-home .czx-cta::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(0,180,216,.18) 0%, transparent 60%),
+        radial-gradient(var(--czx-gray-500) 1px, transparent 1px);
+      background-size: 100% 100%, 20px 20px;
+      opacity: .4;
+      pointer-events: none;
+    }
+    #czx-corzin-home .czx-cta .czx-container{ position: relative; z-index: 1; }
+
+    #czx-corzin-home .czx-chips{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    #czx-corzin-home .czx-chip{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: var(--czx-r-pill);
+      border: 1px solid rgba(163,230,53,.35);
+      color: var(--czx-lime);
+      background: rgba(255,255,255,.08);
+      font-weight: 800;
+      font-size: .8rem;
+    }
+
+    #czx-corzin-home .czx-cta h2{
+      font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+    #czx-corzin-home .czx-cta p{
+      text-align: center;
+      color: rgba(255,255,255,.82);
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      max-width: 70ch;
+      margin: 0 auto 18px auto;
+    }
+    #czx-corzin-home .czx-cta-actions{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    @media (min-width: 768px){
+      #czx-corzin-home .czx-cta-actions{ flex-direction: row; }
+    }
+    #czx-corzin-home .czx-cta-link{
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      font-weight: 700;
+      text-decoration: underline;
+      opacity: .9;
+      color: rgba(255,255,255,.9);
+    }
+    #czx-corzin-home .czx-cta-link:hover{ opacity: 1; color: #fff; }
+
+    #czx-corzin-home .czx-footer{
+      background: var(--czx-navy-2);
+      color: rgba(255,255,255,.82);
+      padding: 48px 0 92px 0; /* mobile sticky bar space */
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    @media (min-width: 768px){
+      #czx-corzin-home .czx-footer{ padding-bottom: 48px; }
+    }
+
+    #czx-corzin-home .czx-footer-grid{
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    @media (min-width: 900px){
+      #czx-corzin-home .czx-footer-grid{
+        grid-template-columns: 1.45fr 1fr 1fr 1.35fr;
+        gap: 18px;
+      }
+    }
+
+    #czx-corzin-home .czx-footer h4{
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    #czx-corzin-home .czx-footer p{ font-size: .92rem; opacity: .95; }
+
+    #czx-corzin-home .czx-mini-badges{
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    #czx-corzin-home .czx-mini-badge{
+      font-size: .72rem;
+      font-weight: 900;
+      color: var(--czx-lime);
+      padding: 4px 8px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    #czx-corzin-home .czx-contact{
+      display: grid;
+      gap: 10px;
+      font-size: .92rem;
+    }
+    #czx-corzin-home .czx-contact a{ color: rgba(255,255,255,.9); text-decoration: underline; }
+    #czx-corzin-home .czx-contact i{ color: var(--czx-aqua); margin-right: 8px; }
+
+    #czx-corzin-home .czx-links{
+      display: grid;
+      gap: 8px;
+      font-size: .92rem;
+    }
+    #czx-corzin-home .czx-links a{
+      opacity: .9;
+      transition: opacity .2s var(--czx-ease), transform .2s var(--czx-ease), color .2s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-links a:hover{
+      opacity: 1;
+      color: var(--czx-aqua);
+      transform: translateX(2px);
+    }
+
+    #czx-corzin-home .czx-mini-form{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 12px;
+      border-radius: var(--czx-r-md);
+      display: grid;
+      gap: 10px;
+    }
+    #czx-corzin-home .czx-mini-input{
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.10);
+      color: #fff;
+      outline: none;
+    }
+    #czx-corzin-home .czx-mini-input::placeholder{ color: rgba(255,255,255,.62); }
+
+    #czx-corzin-home .czx-footer-bottom{
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: .82rem;
+      opacity: .82;
+    }
+    @media (min-width: 768px){
+      #czx-corzin-home .czx-footer-bottom{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    #czx-corzin-home .czx-legal a{ margin-right: 12px; text-decoration: underline; color: rgba(255,255,255,.86); }
+    #czx-corzin-home .czx-legal a:hover{ color: #fff; }
+
+    /* ==============================
+       Sticky Mobile Bar + Desktop FABs
+       ============================== */
+    #czx-corzin-home .czx-stickybar{
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 62px;
+      background: #fff;
+      border-top: 1px solid var(--czx-gray-200);
+      box-shadow: 0 -10px 30px rgba(2,6,23,.10);
+      z-index: 999999;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.35fr;
+      transform: translateY(110%);
+      transition: transform .22s var(--czx-ease);
+    }
+    #czx-corzin-home .czx-stickybar.is-visible{ transform: translateY(0); }
+
+    #czx-corzin-home .czx-stickybtn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 900;
+      font-size: .9rem;
+      padding: 0 10px;
+    }
+    #czx-corzin-home .czx-stickybtn i{ font-size: 1.15rem; }
+    #czx-corzin-home .czx-stickybtn--call{
+      color: var(--czx-navy);
+      border-right: 1px solid var(--czx-gray-100);
+    }
+    #czx-corzin-home .czx-stickybtn--wa{
+      background: #25D366;
+      color: #fff;
+    }
+    #czx-corzin-home .czx-stickybtn--cta{
+      background: var(--czx-aqua);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: .92rem;
+    }
+
+    /* Desktop FABs */
+    #czx-corzin-home .czx-fabs{ display: none; }
+    @media (min-width: 768px){
+      #czx-corzin-home .czx-stickybar{ display: none; }
+      #czx-corzin-home .czx-footer{ padding-bottom: 48px; }
+      #czx-corzin-home .czx-fabs{
+        display: grid;
+        gap: 12px;
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 999999;
+        justify-items: end;
+      }
+      #czx-corzin-home .czx-fab{
+        width: 56px;
+        height: 56px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-size: 1.45rem;
+        box-shadow: 0 12px 30px rgba(2,6,23,.22);
+        transition: transform .2s var(--czx-ease), box-shadow .2s var(--czx-ease);
+        position: relative;
+      }
+      #czx-corzin-home .czx-fab:hover{
+        transform: scale(1.06);
+        box-shadow: 0 18px 40px rgba(2,6,23,.30);
+      }
+      #czx-corzin-home .czx-fab--wa{ background: #25D366; }
+      #czx-corzin-home .czx-fab--call{ background: var(--czx-navy); }
+      #czx-corzin-home .czx-fab--cta{ background: var(--czx-aqua); animation: czxPulse 2.1s infinite; }
+
+      #czx-corzin-home .czx-tip{
+        position: absolute;
+        right: 66px;
+        background: rgba(2,6,23,.86);
+        color: #fff;
+        font-size: .85rem;
+        font-weight: 800;
+        padding: 6px 10px;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateX(8px);
+        transition: opacity .2s var(--czx-ease), transform .2s var(--czx-ease);
+        white-space: nowrap;
+        pointer-events: none;
+      }
+      #czx-corzin-home .czx-fab:hover .czx-tip{
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      @keyframes czxPulse{
+        0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, .55); }
+        70% { box-shadow: 0 0 0 16px rgba(0, 180, 216, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
+      }
+    }
+  </style>
+
+  <!-- Header -->
+  <header class="czx-header" role="banner">
+    <div class="czx-container czx-header__inner">
+      <a class="czx-logo" href="#czx-hero" aria-label="Go to top">Corzin<span>Aqua</span></a>
+
+      <nav class="czx-nav" aria-label="Primary">
+        <a href="#czx-problems">Problems</a>
+        <a href="#czx-technology">Technology</a>
+        <a href="#czx-benefits">Benefits</a>
+        <a href="#czx-installation">Installation</a>
+        <a href="#czx-reviews">Reviews</a>
+        <a href="#czx-faq">FAQ</a>
+        <a class="czx-btn czx-btn--primary" href="#czx-contact">Book Free Test</a>
+      </nav>
+
+      <button class="czx-mobile-toggle" type="button" data-czx-toggle aria-label="Open menu" aria-expanded="false">
+        <span class="czx-burger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+  
+  <div class="czx-lang-bar">
+    <button class="czx-lang-pill is-active" onclick="switchLang('en')">English</button>
+    <button class="czx-lang-pill" onclick="switchLang('mr')">मराठी</button>
+    <button class="czx-lang-pill" onclick="switchLang('hi')">हिंदी</button>
+  </div>
+
+  <div class="czx-overlay" data-czx-overlay aria-hidden="true"></div>
+  <div class="czx-mobile-drawer" data-czx-drawer aria-hidden="true">
+    <div class="czx-mobile-links">
+      <a href="#czx-problems"><span>Problems</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-technology"><span>Technology</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-benefits"><span>Benefits</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-installation"><span>Installation</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-reviews"><span>Reviews</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-faq"><span>FAQ</span> <i class="fa-solid fa-angle-right"></i></a>
+    </div>
+    <div class="czx-mobile-actions">
+      <a class="czx-btn czx-btn--primary" href="#czx-contact"><i class="fa-solid fa-calendar-check"></i> Book Free Test</a>
+      <a class="czx-btn czx-btn--outline" href="tel:+919226824223"><i class="fa-solid fa-phone"></i> Call Now</a>
+      <a class="czx-btn czx-btn--whatsapp" href="https://wa.me/919226824223" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Mobile overlay + drawer -->
+  <div class="czx-overlay" data-czx-overlay aria-hidden="true"></div>
+  <div class="czx-mobile-drawer" data-czx-drawer aria-hidden="true">
+    <div class="czx-mobile-links">
+      <a href="#czx-problems"><span>Problems</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-technology"><span>Technology</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-benefits"><span>Benefits</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-installation"><span>Installation</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-reviews"><span>Reviews</span> <i class="fa-solid fa-angle-right"></i></a>
+      <a href="#czx-faq"><span>FAQ</span> <i class="fa-solid fa-angle-right"></i></a>
+    </div>
+    <div class="czx-mobile-actions">
+      <a class="czx-btn czx-btn--primary" href="#czx-contact"><i class="fa-solid fa-calendar-check"></i> Book Free Test</a>
+      <a class="czx-btn czx-btn--outline" href="tel:+919226824223"><i class="fa-solid fa-phone"></i> Call Now</a>
+      <a class="czx-btn czx-btn--whatsapp" href="https://wa.me/919226824223" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+
+  <main class="czx-main" role="main">
+    <!-- Hero -->
+    <section id="czx-hero" class="czx-hero">
+      <div class="czx-container czx-hero__grid">
+        <div class="czx-reveal">
+          <div class="czx-badges" aria-label="Trust badges">
+            <span class="czx-badge"><i class="fa-solid fa-certificate"></i> ISO 9001:2015</span>
+            <span class="czx-badge"><i class="fa-solid fa-users"></i> 5000+ Happy Families</span>
+            <span class="czx-badge"><i class="fa-solid fa-shield-halved"></i> 2 Years Warranty</span>
+          </div>
+
+          <h1 class="czx-hero__h1">
+            Pure Water. Zero Scale.<br>
+            <span class="czx-text-aqua">Total Peace of Mind.</span>
+          </h1>
+
+          <p class="czx-hero__sub">
+            The drop-in-tank, salt-free water conditioner made for Indian homes.
+            No pipe cutting. No electricity. No monthly salt refills. Just cleaner bathrooms, healthier skin, and protected appliances.
+          </p>
+
+          <div class="czx-hero__actions">
+            <a class="czx-btn czx-btn--primary" href="#czx-contact"><i class="fa-solid fa-calendar-check"></i> Book Free Water Test</a>
+            <a class="czx-btn czx-btn--outline" href="tel:+919226824223"><i class="fa-solid fa-phone"></i> Call Now</a>
+          </div>
+        </div>
+
+        <div class="czx-hero__card czx-reveal" aria-label="Free water test form">
+          <div class="czx-card-title">Get a Free Water Test</div>
+
+          <form class="czx-form" data-czx-lead-form>
+            <div class="czx-field">
+              <input class="czx-input" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+            </div>
+
+            <div class="czx-field">
+              <input class="czx-input" type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" required>
+            </div>
+
+            <div class="czx-field">
+              <input class="czx-input" type="text" name="location" placeholder="City / Location" autocomplete="address-level2" required>
+            </div>
+
+            <div class="czx-field">
+              <select class="czx-select" name="source" required>
+                <option value="" disabled selected>Water Source</option>
+                <option value="municipal">Municipal / Corporation</option>
+                <option value="borewell">Borewell</option>
+                <option value="tanker">Tanker</option>
+                <option value="mix">Mix</option>
+              </select>
+            </div>
+
+            <button class="czx-btn czx-btn--lime" type="submit" aria-label="Submit lead form">
+              <i class="fa-solid fa-paper-plane"></i> Book Free Consultation
+            </button>
+
+            <div class="czx-privacy">We respect your privacy. No spam.</div>
+            <div class="czx-form-note" data-czx-form-note>Thanks! We’ll contact you shortly.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problems -->
+    <section id="czx-problems" class="czx-section czx-section--soft czx-dot">
+      <div class="czx-container">
+        <div class="czx-reveal" style="text-align:center;">
+          <h2 class="czx-title">Hard Water Problems in Indian Homes</h2>
+          <p class="czx-kicker">If you see white stains, feel dry skin, or your geyser needs frequent repairs, hard water is usually the reason.</p>
+        </div>
+
+        <div class="czx-grid-3" style="margin-top:22px;">
+          <!-- 1 -->
+          <article class="czx-card czx-reveal">
+            <div class="czx-card__body">
+              <div class="czx-icon"><i class="fa-solid fa-user-injured"></i></div>
+              <h3 class="czx-card__title">Hair Fall & Dry Skin</h3>
+              <p class="czx-card__text">Hard water strips natural oils, leading to hair fall, dandruff, and rough skin after every shower.</p>
+            </div>
+            <div class="czx-media czx-ar-square czx-card__media">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-5.jpg" alt="Hair fall and dry skin from hard water" loading="lazy">
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="czx-card czx-reveal">
+            <div class="czx-card__body">
+              <div class="czx-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+              <h3 class="czx-card__title">White Stains on Taps</h3>
+              <p class="czx-card__text">Stubborn calcium deposits ruin the look of bathroom fittings, tiles, and glass partitions.</p>
+            </div>
+            <div class="czx-media czx-ar-square czx-card__media">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/can_you_please_make_this_tap_look_more_d.jpg" alt="White scaling on taps" loading="lazy">
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="czx-card czx-reveal">
+            <div class="czx-card__body">
+              <div class="czx-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3 class="czx-card__title">Geyser Coil Burnout</h3>
+              <p class="czx-card__text">Scale acts as an insulator, increases electricity bills, and damages heating coils over time.</p>
+            </div>
+            <div class="czx-media czx-ar-square czx-card__media">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-7.jpg" alt="Geyser coil damage from scaling" loading="lazy">
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="czx-card czx-reveal">
+            <div class="czx-card__body">
+              <div class="czx-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3 class="czx-card__title">Appliance Damage</h3>
+              <p class="czx-card__text">Hardness reduces the lifespan of washing machines, dishwashers, and RO pre-filters.</p>
+            </div>
+            <div class="czx-media czx-ar-square czx-card__media">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-14.jpg" alt="Appliance scaling issues" loading="lazy">
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="czx-card czx-reveal">
+            <div class="czx-card__body">
+              <div class="czx-icon"><i class="fa-solid fa-ban"></i></div>
+              <h3 class="czx-card__title">Blocked Pipelines</h3>
+              <p class="czx-card__text">Scale buildup narrows pipes, reduces pressure, and leads to expensive plumbing repairs.</p>
+            </div>
+            <div class="czx-media czx-ar-square czx-card__media">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-8.jpg" alt="Blocked pipelines due to scale" loading="lazy">
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="czx-card czx-reveal">
+            <div class="czx-card__body">
+              <div class="czx-icon"><i class="fa-solid fa-pump-soap"></i></div>
+              <h3 class="czx-card__title">High Soap Usage</h3>
+              <p class="czx-card__text">Hard water prevents lather, forcing you to use more soap, shampoo, and detergent.</p>
+            </div>
+            <div class="czx-media czx-ar-square czx-card__media">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-4.jpg" alt="Soap scum and low lather" loading="lazy">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="czx-technology" class="czx-section">
+      <div class="czx-container">
+        <div class="czx-reveal" style="text-align:center;">
+          <h2 class="czx-title">How Corzin Works</h2>
+          <p class="czx-kicker">Advanced media technology. No salt. No chemicals. No electricity.</p>
+        </div>
+
+        <div class="czx-stepper">
+          <div class="czx-steps czx-reveal" aria-label="Technology steps">
+            <button class="czx-step is-active" type="button" data-czx-step="1" data-czx-img="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-10.jpg">
+              <div class="czx-step__num">1</div>
+              <div>
+                <div class="czx-step__h">Hard Water Enters</div>
+                <div class="czx-step__p">Water containing calcium and magnesium reaches the Corzin unit.</div>
+                <div class="czx-pill"><i class="fa-solid fa-check"></i> Works with Borewell & Tanker Water</div>
+              </div>
+            </button>
+
+            <button class="czx-step" type="button" data-czx-step="2" data-czx-img="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-11.jpg">
+              <div class="czx-step__num">2</div>
+              <div>
+                <div class="czx-step__h">Neutralization Process</div>
+                <div class="czx-step__p">Food-grade media reduces mineral bonding so scale doesn’t stick to surfaces.</div>
+                <div class="czx-pill"><i class="fa-solid fa-check"></i> No Salt Refilling Needed</div>
+              </div>
+            </button>
+
+            <button class="czx-step" type="button" data-czx-step="3" data-czx-img="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-12.jpg">
+              <div class="czx-step__num">3</div>
+              <div>
+                <div class="czx-step__h">Conditioned Water Flows</div>
+                <div class="czx-step__p">Water flows through your home with dramatically reduced scaling and buildup.</div>
+                <div class="czx-pill"><i class="fa-solid fa-check"></i> Protects Pipes & Appliances</div>
+              </div>
+            </button>
+          </div>
+
+          <div class="czx-diagram czx-media czx-ar-wide czx-reveal" aria-label="Technology diagram">
+            <img data-czx-step-image
+                 src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-10.jpg"
+                 alt="How Corzin works - Step 1"
+                 loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="czx-benefits" class="czx-section czx-section--aqua">
+      <div class="czx-container">
+        <div class="czx-reveal" style="text-align:center;">
+          <h2 class="czx-title">Experience the Difference</h2>
+          <p class="czx-kicker">Why thousands of families across Maharashtra trust Corzin.</p>
+        </div>
+
+        <div class="czx-grid-3" style="margin-top:22px;">
+          <article class="czx-card czx-reveal">
+            <div class="czx-media czx-ar-benefit">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-13.jpg" alt="Beauty benefits" loading="lazy">
+            </div>
+            <div class="czx-card__body">
+              <h3 class="czx-card__title"><i class="fa-solid fa-spa czx-text-aqua"></i> Beauty Benefits</h3>
+              <p class="czx-card__text">
+                Softer skin, reduced hair fall, better lather with less soap.
+                <span class="czx-text-aqua" style="font-weight:800;">Feel the difference fast.</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="czx-card czx-reveal">
+            <div class="czx-media czx-ar-benefit">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-14.jpg" alt="Appliance protection" loading="lazy">
+            </div>
+            <div class="czx-card__body">
+              <h3 class="czx-card__title"><i class="fa-solid fa-shield-halved czx-text-aqua"></i> Appliance Protection</h3>
+              <p class="czx-card__text">
+                Helps prevent coil burnout and scaling damage, cutting repair costs and improving efficiency.
+                <span class="czx-text-aqua" style="font-weight:800;">Zero electricity.</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="czx-card czx-reveal">
+            <div class="czx-media czx-ar-benefit">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-15.jpg" alt="Home cleanliness" loading="lazy">
+            </div>
+            <div class="czx-card__body">
+              <h3 class="czx-card__title"><i class="fa-solid fa-sparkles czx-text-aqua"></i> Cleaner Home</h3>
+              <p class="czx-card__text">
+                Spot-free tiles and glass, shinier taps, less scrubbing and fewer white marks.
+                <span class="czx-text-aqua" style="font-weight:800;">Bathrooms stay newer.</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="czx-section">
+      <div class="czx-container">
+        <div class="czx-reveal" style="text-align:center;">
+          <h2 class="czx-title">Why Corzin is Better</h2>
+          <p class="czx-kicker">A practical comparison with salt-based softeners and doing nothing.</p>
+        </div>
+
+        <div class="czx-table-wrap czx-reveal" role="region" aria-label="Comparison table" tabindex="0">
+          <table class="czx-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="czx-col-corzin">Corzin Aqua</th>
+                <th>Salt-Based Softener</th>
+                <th>No Softener</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Salt Required</b></td>
+                <td class="czx-col-corzin"><i class="fa-solid fa-check czx-ok"></i> No salt needed</td>
+                <td><i class="fa-solid fa-xmark czx-no"></i> Monthly refills</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><b>Installation</b></td>
+                <td class="czx-col-corzin"><i class="fa-solid fa-check czx-ok"></i> Drop-in tank (easy)</td>
+                <td><i class="fa-solid fa-xmark czx-no"></i> Plumbing + space</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><b>Electricity</b></td>
+                <td class="czx-col-corzin"><i class="fa-solid fa-check czx-ok"></i> None</td>
+                <td><i class="fa-solid fa-xmark czx-no"></i> Often required</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><b>Water Wastage</b></td>
+                <td class="czx-col-corzin"><i class="fa-solid fa-check czx-ok"></i> Zero wastage</td>
+                <td><i class="fa-solid fa-xmark czx-no"></i> High during regeneration</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><b>Maintenance</b></td>
+                <td class="czx-col-corzin"><i class="fa-solid fa-check czx-ok"></i> Low hassle</td>
+                <td><i class="fa-solid fa-xmark czx-no"></i> High</td>
+                <td>High repairs over time</td>
+              </tr>
+              <tr>
+                <td><b>Health / Taste</b></td>
+                <td class="czx-col-corzin"><i class="fa-solid fa-check czx-ok"></i> No sodium added</td>
+                <td><i class="fa-solid fa-triangle-exclamation czx-warn"></i> Sodium increases</td>
+                <td>Hard water issues</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation -->
+    <section id="czx-installation" class="czx-section czx-section--soft czx-dot">
+      <div class="czx-container">
+        <div class="czx-reveal" style="text-align:center;">
+          <h2 class="czx-title">Zero Installation. Zero Hassle.</h2>
+          <p class="czx-kicker">No plumbers. No pipe cutting. Just drop it into the overhead tank.</p>
+        </div>
+
+        <div class="czx-grid-3" style="margin-top:22px;">
+          <article class="czx-card czx-reveal" style="text-align:center;">
+            <div class="czx-media czx-ar-install">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-16.jpg" alt="Open tank lid" loading="lazy">
+            </div>
+            <div class="czx-card__body">
+              <h3 class="czx-card__title" style="justify-self:center;">1. Open Tank</h3>
+              <p class="czx-card__text">Open the overhead tank lid.</p>
+            </div>
+          </article>
+
+          <article class="czx-card czx-reveal" style="text-align:center;">
+            <div class="czx-media czx-ar-install">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-17.jpg" alt="Drop unit in tank" loading="lazy">
+            </div>
+            <div class="czx-card__body">
+              <h3 class="czx-card__title" style="justify-self:center;">2. Drop It In</h3>
+              <p class="czx-card__text">Place the unit at the bottom of the tank.</p>
+            </div>
+          </article>
+
+          <article class="czx-card czx-reveal" style="text-align:center;">
+            <div class="czx-media czx-ar-install">
+              <img src="https://corzingroup.com//wp-content/uploads/2025/12/Base_style_append__Photorealistic_comm-18.jpg" alt="Close lid and use" loading="lazy">
+            </div>
+            <div class="czx-card__body">
+              <h3 class="czx-card__title" style="justify-self:center;">3. That’s It</h3>
+              <p class="czx-card__text">Close the lid. Conditioned water flows across your home.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="czx-reveal" style="text-align:center; margin-top:20px;">
+          <p class="czx-muted" style="font-weight:800;">
+            <i class="fa-solid fa-circle-info czx-text-aqua"></i>
+            Tank capacity 200L to 2000 L
+          </p>
+          <div style="margin-top:14px;">
+            <a class="czx-btn czx-btn--primary" href="#czx-contact"><i class="fa-solid fa-cart-shopping"></i> Get Corzin for My Tank</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="czx-reviews" class="czx-section">
+      <div class="czx-container">
+        <div class="czx-reveal" style="text-align:center;">
+          <h2 class="czx-title">Trusted by Maharashtra</h2>
+          <p class="czx-kicker">Join 5000+ happy families enjoying scale-free water every day.</p>
+        </div>
+
+        <div class="czx-stats czx-reveal" aria-label="Trust statistics">
+          <div class="czx-stat">
+            <i class="fa-solid fa-certificate"></i>
+            <b>ISO 9001:2015</b>
+            <span>Certified Quality</span>
+          </div>
+          <div class="czx-stat">
+            <i class="fa-solid fa-users"></i>
+            <b>5000+</b>
+            <span>Installations</span>
+          </div>
+          <div class="czx-stat">
+            <i class="fa-solid fa-shield-halved"></i>
+            <b>2 Years</b>
+            <span>Warranty</span>
+          </div>
+          <div class="czx-stat">
+            <i class="fa-solid fa-industry"></i>
+            <b>Made in India</b>
+            <span>Maharashtra</span>
+          </div>
+        </div>
+
+        <div class="czx-slider czx-reveal" aria-label="Customer testimonials">
+          <button class="czx-arrow czx-arrow--prev" type="button" data-czx-prev aria-label="Previous review">&#10094;</button>
+          <button class="czx-arrow czx-arrow--next" type="button" data-czx-next aria-label="Next review">&#10095;</button>
+
+          <div class="czx-slider__frame" data-czx-slider-frame>
+            <div class="czx-slider__track" data-czx-track>
+              <div class="czx-slide" data-czx-slide>
+                <div class="czx-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="czx-quote">“My hair fall reduced significantly within a month. The white scaling on my bathroom tiles is completely gone. Highly recommended!”</div>
+                <div class="czx-who">
+                  <b>Rajesh Deshmukh</b>
+                  <span>Pune, Maharashtra</span>
+                  <div class="czx-stars">★★★★★</div>
+                </div>
+              </div>
+
+              <div class="czx-slide" data-czx-slide>
+                <div class="czx-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="czx-quote">“Best investment for my new flat. No electricity needed and zero water wastage. Super easy and hassle-free.”</div>
+                <div class="czx-who">
+                  <b>Sneha Patil</b>
+                  <span>Nashik, Maharashtra</span>
+                  <div class="czx-stars">★★★★★</div>
+                </div>
+              </div>
+
+              <div class="czx-slide" data-czx-slide>
+                <div class="czx-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="czx-quote">“I was tired of buying salt for my old softener. Corzin is truly fit-and-forget. Water quality feels much better.”</div>
+                <div class="czx-who">
+                  <b>Amit Kulkarni</b>
+                  <span>Baramati, Maharashtra</span>
+                  <div class="czx-stars">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="czx-muted" style="text-align:center; margin-top:12px; font-weight:700;">
+            Tip: swipe on mobile or use arrows on desktop.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="czx-faq" class="czx-section czx-section--soft czx-dot">
+      <div class="czx-container">
+        <div class="czx-reveal" style="text-align:center;">
+          <h2 class="czx-title">Frequently Asked Questions</h2>
+          <p class="czx-kicker">Clear answers for borewell, tanker, and municipal water users.</p>
+        </div>
+
+        <div class="czx-faq-wrap">
+          <div class="czx-reveal" style="display:grid; gap:12px;">
+            <details class="czx-faq">
+              <summary class="czx-faq__q">
+                <span style="display:flex; gap:10px; align-items:center;">
+                  <span class="czx-topic czx-topic--tech">Technology</span>
+                  <span>Does it remove TDS from water?</span>
+                </span>
+                <i class="fa-solid fa-chevron-down czx-chevron"></i>
+              </summary>
+              <div class="czx-faq__a">
+                No. Corzin is a salt-free conditioner, not an RO. It reduces hardness minerals’ tendency to form scale,
+                but retains minerals and avoids water wastage.
+              </div>
+            </details>
+
+            <details class="czx-faq">
+              <summary class="czx-faq__q">
+                <span style="display:flex; gap:10px; align-items:center;">
+                  <span class="czx-topic czx-topic--source">Water Source</span>
+                  <span>Is it suitable for borewell water?</span>
+                </span>
+                <i class="fa-solid fa-chevron-down czx-chevron"></i>
+              </summary>
+              <div class="czx-faq__a">
+                Yes. Corzin is designed for high-hardness borewell and tanker water. A free water test helps choose the right model for your hardness level.
+              </div>
+            </details>
+
+            <details class="czx-faq">
+              <summary class="czx-faq__q">
+                <span style="display:flex; gap:10px; align-items:center;">
+                  <span class="czx-topic czx-topic--maint">Maintenance</span>
+                  <span>How often do I need to change the media?</span>
+                </span>
+                <i class="fa-solid fa-chevron-down czx-chevron"></i>
+              </summary>
+              <div class="czx-faq__a">
+                Typically 3–5 years depending on usage and hardness. No monthly salt refilling.
+              </div>
+            </details>
+
+            <details class="czx-faq">
+              <summary class="czx-faq__q">
+                <span style="display:flex; gap:10px; align-items:center;">
+                  <span class="czx-topic czx-topic--tech">Technology</span>
+                  <span>Does it require electricity?</span>
+                </span>
+                <i class="fa-solid fa-chevron-down czx-chevron"></i>
+              </summary>
+              <div class="czx-faq__a">
+                No. It works without electricity, so it also works during power cuts.
+              </div>
+            </details>
+
+            <details class="czx-faq">
+              <summary class="czx-faq__q">
+                <span style="display:flex; gap:10px; align-items:center;">
+                  <span class="czx-topic czx-topic--maint">Maintenance</span>
+                  <span>Does it need salt refilling?</span>
+                </span>
+                <i class="fa-solid fa-chevron-down czx-chevron"></i>
+              </summary>
+              <div class="czx-faq__a">
+                Never. That’s one of the biggest advantages over traditional salt-based softeners.
+              </div>
+            </details>
+
+            <details class="czx-faq">
+              <summary class="czx-faq__q">
+                <span style="display:flex; gap:10px; align-items:center;">
+                  <span class="czx-topic czx-topic--service">Usage</span>
+                  <span>Does it work for the entire house?</span>
+                </span>
+                <i class="fa-solid fa-chevron-down czx-chevron"></i>
+              </summary>
+              <div class="czx-faq__a">
+                Yes. Installed at the overhead tank (or main inlet), it conditions water for all taps, showers, and appliances.
+              </div>
+            </details>
+
+            <details class="czx-faq">
+              <summary class="czx-faq__q">
+                <span style="display:flex; gap:10px; align-items:center;">
+                  <span class="czx-topic czx-topic--service">Service</span>
+                  <span>What is the warranty?</span>
+                </span>
+                <i class="fa-solid fa-chevron-down czx-chevron"></i>
+              </summary>
+              <div class="czx-faq__a">
+                2-year warranty on the unit, with local support in Maharashtra.
+              </div>
+            </details>
+          </div>
+
+          <aside class="czx-faq-cta czx-reveal" aria-label="Help and contact">
+            <h4>Still have questions?</h4>
+            <p>Talk to a water expert and get the right recommendation for your source and tank size.</p>
+            <div style="display:grid; gap:10px;">
+              <a class="czx-btn czx-btn--whatsapp" href="https://wa.me/919226824223" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+              </a>
+              <a class="czx-btn czx-btn--outline" href="tel:+919226824223" style="border-color: rgba(255,255,255,.35); color:#fff;">
+                <i class="fa-solid fa-phone"></i> Call Now
+              </a>
+            </div>
+            <p style="margin:12px 0 0 0; font-size:.82rem; opacity:.75;">
+              Reply in under 15 minutes (9 AM – 9 PM)
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="czx-contact" class="czx-section czx-cta">
+      <div class="czx-container czx-reveal">
+        <div class="czx-chips" aria-label="Key benefits">
+          <span class="czx-chip"><i class="fa-solid fa-bolt"></i> No Electricity</span>
+          <span class="czx-chip"><i class="fa-solid fa-ban"></i> No Salt Refills</span>
+          <span class="czx-chip"><i class="fa-solid fa-shield-halved"></i> 2-Year Warranty</span>
+        </div>
+
+        <h2>Get a free water test at your doorstep.</h2>
+        <p>Borewell, tanker, or municipal — we’ll recommend the right setup for your home.</p>
+
+        <div class="czx-cta-actions">
+          <a class="czx-btn czx-btn--primary" href="#czx-hero"><i class="fa-solid fa-calendar-check"></i> Book Free Water Test</a>
+          <a class="czx-btn czx-btn--whatsapp" href="https://wa.me/919226824223" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp for Quote</a>
+        </div>
+
+        <a class="czx-cta-link" href="tel:+919226824223">Call: +91 92268 24223</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="czx-footer" role="contentinfo">
+      <div class="czx-container">
+        <div class="czx-footer-grid">
+          <!-- Brand -->
+          <div>
+            <div class="czx-logo" style="color:#fff; margin-bottom:10px;">Corzin<span>Aqua</span></div>
+            <p>Advanced salt-free water conditioning solutions engineered for Indian water conditions. Protect your home, health, and appliances.</p>
+            <div class="czx-mini-badges">
+              <span class="czx-mini-badge">ISO 9001:2015</span>
+              <span class="czx-mini-badge">Made in India</span>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4>Contact Us</h4>
+            <div class="czx-contact">
+              <div><i class="fa-solid fa-phone"></i> <a href="tel:+919226824223">+91 92268 24223</a></div>
+              <div><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/919226824223" target="_blank" rel="noopener">WhatsApp Chat</a></div>
+              <div><i class="fa-solid fa-location-dot"></i> Yashwant Nagar Kasba, Baramati, Maharashtra</div>
+              <div><i class="fa-regular fa-clock"></i> Mon – Sat: 9:00 AM – 8:00 PM</div>
+              <div><i class="fa-solid fa-map-location-dot"></i> <a href="https://maps.google.com" target="_blank" rel="noopener">Get Directions</a></div>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4>Quick Links</h4>
+            <div class="czx-links">
+              <a href="#czx-problems">Hard Water Problems</a>
+              <a href="#czx-technology">How It Works</a>
+              <a href="#czx-benefits">Benefits</a>
+              <a href="#czx-reviews">Customer Reviews</a>
+              <a href="#czx-faq">FAQ</a>
+            </div>
+          </div>
+
+          <!-- Service + Mini form -->
+          <div>
+            <h4>Service Area</h4>
+            <p style="margin-bottom:10px;">Baramati • Pune • Indapur • Phaltan • Daund • Surrounding Maharashtra Regions</p>
+
+            <form class="czx-mini-form" data-czx-mini-form>
+              <input class="czx-mini-input" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+              <input class="czx-mini-input" type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" required>
+              <button class="czx-btn czx-btn--primary" type="submit"><i class="fa-solid fa-phone-volume"></i> Request Callback</button>
+              <div class="czx-form-note" data-czx-mini-note>Thanks! We’ll call you shortly.</div>
+            </form>
+          </div>
+        </div>
+
+        <div class="czx-footer-bottom">
+          <div>© 2025 Corzin Aqua. All rights reserved.</div>
+          <div class="czx-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Sticky Mobile Bar -->
+  <div class="czx-stickybar" data-czx-stickybar aria-label="Quick actions">
+    <a class="czx-stickybtn czx-stickybtn--call" href="tel:+919226824223" aria-label="Call us">
+      <i class="fa-solid fa-phone"></i> Call
+    </a>
+    <a class="czx-stickybtn czx-stickybtn--wa" href="https://wa.me/919226824223" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+    <a class="czx-stickybtn czx-stickybtn--cta" href="#czx-contact" aria-label="Book free water test">
+      Book Free Test
+    </a>
+  </div>
+
+  <!-- Desktop FABs -->
+  <div class="czx-fabs" aria-label="Floating actions">
+    <a class="czx-fab czx-fab--wa" href="https://wa.me/919226824223" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <span class="czx-tip">Chat with us</span>
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="czx-fab czx-fab--call" href="tel:+919226824223" aria-label="Call now">
+      <span class="czx-tip">Call now</span>
+      <i class="fa-solid fa-phone"></i>
+    </a>
+    <a class="czx-fab czx-fab--cta" href="#czx-contact" aria-label="Book free test">
+      <span class="czx-tip">Book test</span>
+      <i class="fa-solid fa-calendar-check"></i>
+    </a>
+  </div>
+
+  <!-- Optional FAQ Schema (kept short + valid) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does it remove TDS from water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Corzin is a salt-free conditioner, not an RO. It reduces hardness minerals’ tendency to form scale while retaining minerals and avoiding water wastage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it suitable for borewell water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Corzin is designed for high-hardness borewell and tanker water. A free water test helps choose the right model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it require electricity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Corzin works without electricity."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <script>
+    (function () {
+      const root = document.getElementById('czx-corzin-home');
+      if (!root) return;
+
+      const qs = (sel, ctx = root) => ctx.querySelector(sel);
+      const qsa = (sel, ctx = root) => Array.from(ctx.querySelectorAll(sel));
+
+      /* ---------------------------
+         Mobile drawer
+      --------------------------- */
+      const toggle = qs('[data-czx-toggle]');
+      const drawer = qs('[data-czx-drawer]');
+      const overlay = qs('[data-czx-overlay]');
+
+      const setDrawer = (open) => {
+        if (!toggle || !drawer || !overlay) return;
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        drawer.classList.toggle('is-open', open);
+        overlay.classList.toggle('is-open', open);
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+        overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+        // Prevent background scroll only when drawer is open
+        document.documentElement.style.overflow = open ? 'hidden' : '';
+      };
+
+      if (toggle && drawer && overlay) {
+        toggle.addEventListener('click', () => {
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          setDrawer(!isOpen);
+        });
+
+        overlay.addEventListener('click', () => setDrawer(false));
+
+        qsa('.czx-mobile-drawer a').forEach(a => {
+          a.addEventListener('click', () => setDrawer(false));
+        });
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') setDrawer(false);
+        });
+      }
+
+      /* ---------------------------
+         Smooth scroll for internal links
+      --------------------------- */
+      root.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#czx-"]');
+        if (!a) return;
+
+        const id = a.getAttribute('href');
+        const target = document.querySelector(id);
+        if (!target) return;
+
+        e.preventDefault();
+        setDrawer(false);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      /* ---------------------------
+         Reveal animations (IntersectionObserver)
+      --------------------------- */
+      const revealEls = qsa('.czx-reveal');
+      if ('IntersectionObserver' in window && revealEls.length) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        revealEls.forEach(el => io.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+      }
+
+      /* ---------------------------
+         Stepper logic + autoplay
+      --------------------------- */
+      const steps = qsa('[data-czx-step]');
+      const stepImage = qs('[data-czx-step-image]');
+      let stepIndex = 0;
+      let stepTimer = null;
+
+      const activateStep = (index, userAction = false) => {
+        if (!steps.length || !stepImage) return;
+
+        const safeIndex = ((index % steps.length) + steps.length) % steps.length;
+        stepIndex = safeIndex;
+
+        steps.forEach((btn, i) => btn.classList.toggle('is-active', i === safeIndex));
+
+        const img = steps[safeIndex].getAttribute('data-czx-img');
+        if (img) {
+          stepImage.style.opacity = '0.45';
+          window.setTimeout(() => {
+            stepImage.src = img;
+            stepImage.alt = 'How Corzin works - Step ' + (safeIndex + 1);
+            stepImage.style.opacity = '1';
+          }, 160);
+        }
+
+        if (userAction) restartStepper();
+      };
+
+      const startStepper = () => {
+        if (!steps.length) return;
+        stepTimer = window.setInterval(() => activateStep(stepIndex + 1, false), 5000);
+      };
+
+      const stopStepper = () => {
+        if (stepTimer) window.clearInterval(stepTimer);
+        stepTimer = null;
+      };
+
+      const restartStepper = () => {
+        stopStepper();
+        startStepper();
+      };
+
+      steps.forEach((btn, i) => {
+        btn.addEventListener('click', () => activateStep(i, true));
+      });
+
+      // init
+      activateStep(0, false);
+      startStepper();
+
+      /* ---------------------------
+         Testimonials slider (buttons + swipe)
+      --------------------------- */
+      const track = qs('[data-czx-track]');
+      const slides = qsa('[data-czx-slide]');
+      const prev = qs('[data-czx-prev]');
+      const next = qs('[data-czx-next]');
+      const frame = qs('[data-czx-slider-frame]');
+      let slideIndex = 0;
+      let slideTimer = null;
+
+      const updateSlider = () => {
+        if (!track || !slides.length) return;
+        track.style.transform = `translateX(-${slideIndex * 100}%)`;
+      };
+
+      const go = (dir) => {
+        slideIndex = (slideIndex + dir + slides.length) % slides.length;
+        updateSlider();
+        restartSlider();
+      };
+
+      const startSlider = () => {
+        if (!slides.length) return;
+        slideTimer = window.setInterval(() => go(1), 6500);
+      };
+
+      const stopSlider = () => {
+        if (slideTimer) window.clearInterval(slideTimer);
+        slideTimer = null;
+      };
+
+      const restartSlider = () => {
+        stopSlider();
+        startSlider();
+      };
+
+      if (prev) prev.addEventListener('click', () => go(-1));
+      if (next) next.addEventListener('click', () => go(1));
+
+      // Swipe support
+      if (frame) {
+        let startX = 0;
+        let currentX = 0;
+        let dragging = false;
+
+        frame.addEventListener('touchstart', (e) => {
+          dragging = true;
+          startX = e.touches[0].clientX;
+          currentX = startX;
+          stopSlider();
+        }, { passive: true });
+
+        frame.addEventListener('touchmove', (e) => {
+          if (!dragging) return;
+          currentX = e.touches[0].clientX;
+        }, { passive: true });
+
+        frame.addEventListener('touchend', () => {
+          if (!dragging) return;
+          dragging = false;
+          const dx = currentX - startX;
+          if (Math.abs(dx) > 45) go(dx > 0 ? -1 : 1);
+          else restartSlider();
+        });
+      }
+
+      updateSlider();
+      startSlider();
+
+      /* ---------------------------
+         Sticky mobile bar show after scroll
+      --------------------------- */
+      const sticky = qs('[data-czx-stickybar]');
+      const handleSticky = () => {
+        if (!sticky) return;
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        if (!isMobile) return;
+
+        const y = window.scrollY || document.documentElement.scrollTop || 0;
+        sticky.classList.toggle('is-visible', y > 420);
+      };
+
+      window.addEventListener('scroll', handleSticky, { passive: true });
+      window.addEventListener('resize', handleSticky);
+      handleSticky();
+
+      /* ---------------------------
+         Forms: simple UX (no page reload)
+      --------------------------- */
+      const showNote = (noteEl) => {
+        if (!noteEl) return;
+        noteEl.classList.add('is-show');
+        window.setTimeout(() => noteEl.classList.remove('is-show'), 4500);
+      };
+
+      root.addEventListener('submit', (e) => {
+        const leadForm = e.target.closest('[data-czx-lead-form]');
+        const miniForm = e.target.closest('[data-czx-mini-form]');
+        if (!leadForm && !miniForm) return;
+
+        e.preventDefault();
+
+        if (leadForm) {
+          const note = qs('[data-czx-form-note]', leadForm);
+          showNote(note);
+          leadForm.reset();
+        }
+
+        if (miniForm) {
+          const note = qs('[data-czx-mini-note]', miniForm);
+          showNote(note);
+          miniForm.reset();
+        }
+      });
+
+      /* ---------------------------
+         FAQ: keep only one open (optional)
+      --------------------------- */
+      const faqs = qsa('details.czx-faq');
+      faqs.forEach((d) => {
+        d.addEventListener('toggle', () => {
+          if (!d.open) return;
+          faqs.forEach((other) => {
+            if (other !== d) other.open = false;
+          });
+        });
+      });
+    })();
+    
+  </script>
+</div>
